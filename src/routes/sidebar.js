@@ -1,26 +1,33 @@
 /**
- * ⚠ These are used just to render the Sidebar!
- * You can include any link here, local or external.
- *
- * If you're looking to actual Router routes, go to
- * `routes/index.js`
+ * ⚠ These are physical routes you want to be visible in sidebar
+ * For internal routes and parameters, sub routes use lines for dynamic
  */
 const routes = [
-    {
-        path: '/app/users', // the url
-        icon: 'UsersIcon', // the component being exported from icons/index.js
-        name: 'Usuarios', // name that appear in Sidebar
-    },
-    {
-        path: '/app/roles',
-        icon: 'RolesIcon',
-        name: 'Roles',
-    },
-    {
-        path: '/app/permissions',
-        icon: 'PermissionsIcon',
-        name: 'Permisos',
-    },
+  {
+    path: '/app/dashboard',
+    icon: 'HomeIcon',
+    name: 'Dashboard',
+  },
+  {
+    path: '/app/users',
+    icon: 'UserIcon',
+    name: 'Usuarios',
+  },
+  {
+    path: '/app/roles',
+    icon: 'OutlineCogIcon',
+    name: 'Roles',
+  },
+  {
+    path: '/app/permissions',
+    icon: 'OutlineShieldIcon',
+    name: 'Permisos',
+  },
+  {
+    path: '/app/materiales',
+    icon: 'FormsIcon',
+    name: 'Material Bibliográfico',
+  }
 ]
 
 export default routes
