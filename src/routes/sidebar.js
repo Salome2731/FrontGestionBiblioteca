@@ -27,6 +27,11 @@ const routes = [
     path: '/app/materiales',
     icon: 'FormsIcon',
     name: 'Material Bibliográfico',
+  },
+  {
+    path: '/app/reservas',
+    icon: 'FormsIcon',
+    name: 'Reservas',
   }
 ]
 
