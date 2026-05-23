@@ -1,0 +1,29 @@
+import axios from 'axios';
+
+// La URL de su API de Spring Boot
+const API_URL = 'http://localhost:8080/api/reservations';
+
+export const reservationService = {
+    // Listar todas las reservas
+    getAll: async () => {
+        const response = await axios.get(API_URL);
+        return response.data;
+    },
+
+    // Crear una nueva reserva
+    create: async (reservationData) => {
+        const response = await axios.post(API_URL, reservationData);
+        return response.data;
+    },
+
+    // Cancelar o actualizar estado
+    update: async (id, reservationData) => {
+        const response = await axios.put(`${API_URL}/${id}`, reservationData);
+        return response.data;
+    },
+
+    // Eliminar del todo
+    delete: async (id) => {
+        await axios.delete(`${API_URL}/${id}`);
+    }
+};
