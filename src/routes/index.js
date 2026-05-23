@@ -6,6 +6,7 @@ const Users = lazy(() => import('../pages/Dashboard/users/UsersPage.jsx'))
 const Roles = lazy(() => import('../pages/Dashboard/roles/RolesPage.jsx'))
 const Permissions = lazy(() => import('../pages/Dashboard/permissions/PermissionsPage.jsx'))
 const Materiales = lazy(() => import('../pages/Dashboard/Materiales.jsx'))
+const ReservasPage = lazy(() => import('../pages/reservas/ReservasPage.jsx'))
 
 /**
  * ⚠ These are internal routes!
