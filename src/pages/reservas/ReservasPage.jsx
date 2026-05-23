@@ -4,11 +4,6 @@ import {reservationService} from '../../services/reservationService';
 export default function ReservasPage() {
     const [reservas, setReservas] = useState([]);
 
-    // Cargar los datos al abrir la página
-    useEffect(() => {
-        cargarReservas();
-    }, []);
-
     const cargarReservas = async () => {
         try {
             const data = await reservationService.getAll();
@@ -17,6 +12,12 @@ export default function ReservasPage() {
             console.error("Error cargando reservas:", error);
         }
     };
+
+    // Cargar los datos al abrir la página
+    useEffect(() => {
+        cargarReservas();
+    }, []);
+
 
     const handleCancelar = async (id) => {
         if (confirm("¿Seguro que desea cancelar esta reserva?")) {
