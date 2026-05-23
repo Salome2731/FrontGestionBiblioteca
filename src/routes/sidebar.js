@@ -3,30 +3,35 @@
  * For internal routes and parameters, sub routes use lines for dynamic
  */
 const routes = [
-  {
-    path: '/app/dashboard',
-    icon: 'HomeIcon',
-    name: 'Dashboard',
-  },
+  // {
+  //   path: '/app/dashboard',
+  //   icon: 'HomeIcon',
+  //   name: 'Dashboard',
+  // },
   {
     path: '/app/users',
-    icon: 'UserIcon',
+    icon: 'UsersIcon',
     name: 'Usuarios',
   },
   {
     path: '/app/roles',
-    icon: 'OutlineCogIcon',
+    icon: 'RolesIcon',
     name: 'Roles',
   },
   {
     path: '/app/permissions',
-    icon: 'OutlineShieldIcon',
+    icon: 'PermissionsIcon',
     name: 'Permisos',
   },
   {
     path: '/app/materiales',
     icon: 'FormsIcon',
     name: 'Material Bibliográfico',
+  },
+  {
+    path: '/app/reservas',
+    icon: 'FormsIcon',
+    name: 'Reservas',
   }
 ]
 
