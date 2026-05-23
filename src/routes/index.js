@@ -29,6 +29,11 @@ const routes = [
         component: Materiales,
     },
     {
+        path: 'reservations',
+        component: ReservasPage,
+    },
+    
+    {
         path: '404',
         component: Page404,
     }
