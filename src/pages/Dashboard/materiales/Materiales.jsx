@@ -48,7 +48,7 @@ const Materiales = () => {
             </div>
 
             <div className="overflow-x-auto border rounded-lg shadow">
-                <table className="w-full text-left">
+                <table className="w-full text-center">
                     <thead>
                     <tr className={styles.tableHeaderClass}>
                         <th className={`${styles.cellClass} font-semibold whitespace-nowrap`}>Título</th>
