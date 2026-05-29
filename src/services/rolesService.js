@@ -39,12 +39,18 @@ export const createRoleService = async (data) => {
 
 export const updateRoleService = async (id, data) => {
     try {
+        console.log("id", id);
+        console.log("data", data);
+
         const response = await axios.put(`${API_URL}/${id}`, data);
         return response.data;
     } catch (error) {
-        const backendError = error.response.data;
+        console.log("Error completo", error)
+        console.log("error  back".response.data)
         console.log("ERROR", error)
-        if (error.status === 400) {
+        const backendError = error.response.data;
+
+        if (error.response.status === 400) {
             throw {
                 message: backendError.error.message || "Error desconocido",
                 status: error.status,

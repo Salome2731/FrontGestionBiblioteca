@@ -1,6 +1,6 @@
 import {useForm} from "react-hook-form";
 import {useThemeStyles} from "../../context/useThemeStyles.js";
-import {createRoleService, setRolePermissionsService, updateRoleService} from "../../services/rolesService.js";
+import {createRoleService, updateRoleService} from "../../services/rolesService.js";
 import {useEffect} from "react";
 import Button from "../Button.jsx";
 import {usePermissionStore} from "../../store/permissionStore.jsx";
@@ -31,16 +31,18 @@ const RolesForm = ({fetchRoles, editingRole, setEditingRole, onClose}) => {
         if (permissions.length === 0) {
             fetchPermissions()
         }
-    }, [fetchPermissions, permissions])
+    }, [fetchPermissions, permissions.length])
 
     const styles = useThemeStyles()
 
     useEffect(() => {
         if (editingRole?.id) {
             setValue("name", editingRole.name);
+            setValue("description", editingRole.description);
 
-            const permissionIds = editingRole.permissions?.map(p => p.id) || [];
-            setValue("permissions", permissionIds);
+            const permissionIds =
+                editingRole.permissions?.map(p => p.id) || [];
+            setValue("permissionsIds", permissionIds);
 
         } else {
             reset();
@@ -50,14 +52,15 @@ const RolesForm = ({fetchRoles, editingRole, setEditingRole, onClose}) => {
     const onSubmit = async (data) => {
         try {
             console.log(data)
-            let roleId
 
             if (editingRole?.id) {
                 await updateRoleService(editingRole?.id, {
-                    name: data.name
+                    name: data.name,
+                    description: data.description,
+                    permissionsIds: data.permissionsIds || [],
                 })
             } else {
-                const res = await createRoleService({
+                await createRoleService({
                     name: data.name,
                     description: data.description,
                     permissionsIds: data.permissionsIds || [],
