@@ -167,6 +167,10 @@ function UserForm({fetchUsers, editingUser, setEditingUser, onClose}) {
                            maxLength: {
                                value: 200,
                                message: "Contraseña demasiado larga"
+                           },
+                           pattern: {
+                               value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&._-])[A-Za-z\d@$!%*?&._-]+$/,
+                               message: "Debe tener mayúscula, minúscula, número y carácter especial"
                            }
                        })}
                        className={`${styles.inputBase} ${errors.password ? styles.inputError : ""}`}
@@ -210,7 +214,8 @@ function UserForm({fetchUsers, editingUser, setEditingUser, onClose}) {
                     <label className={label}>DNI</label>
                     <input
                         {...register("DNI", {
-                            minLength: {value: 5, message: "DNI inválida"},
+                            minLength: {value: 5, message: "DNI inválida, debe tener mas de 5 carácteres"},
+
                         })}
                         className={`${styles.inputBase} ${errors.DNI ? styles.inputError : ""}`}
                         placeholder="1234567890"
