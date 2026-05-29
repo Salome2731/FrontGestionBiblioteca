@@ -18,13 +18,10 @@ const MaterialForm = ({ isOpen, onClose, onSave, materialAEditar }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        
-       
         if (parseInt(formData.cantDisp) > parseInt(formData.cantTotal)) {
             alert("Error: La cantidad disponible no puede ser mayor a la cantidad total.");
             return;
         }
-
         onSave(formData);
     };
 
@@ -40,10 +37,8 @@ const MaterialForm = ({ isOpen, onClose, onSave, materialAEditar }) => {
                     <input className="border p-2 rounded" placeholder="Categoría" required value={formData.categoria} onChange={(e) => setFormData({...formData, categoria: e.target.value})}/>
                     <input className="border p-2 rounded" placeholder="Editorial" required value={formData.editorial} onChange={(e) => setFormData({...formData, editorial: e.target.value})}/>
                     <input className="border p-2 rounded" placeholder="ISBN" required value={formData.isbn} onChange={(e) => setFormData({...formData, isbn: e.target.value})}/>
-                    
                     <input type="number" min="0" className="border p-2 rounded" placeholder="Cant. Total" required value={formData.cantTotal} onChange={(e) => setFormData({...formData, cantTotal: e.target.value})}/>
                     <input type="number" min="0" className="border p-2 rounded" placeholder="Cant. Disp." required value={formData.cantDisp} onChange={(e) => setFormData({...formData, cantDisp: e.target.value})}/>
-                    
                     <select className="border p-2 rounded" value={formData.estado} onChange={(e) => setFormData({...formData, estado: e.target.value})}>
                         <option>Disponible</option>
                         <option>Prestado</option>

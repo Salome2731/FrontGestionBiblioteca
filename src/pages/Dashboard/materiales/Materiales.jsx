@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import MaterialForm from './materiales/MaterialForm';
+import MaterialForm from './MaterialForm';
 import { useThemeStyles } from "../../../context/useThemeStyles.js";
 
 const Materiales = () => {
